@@ -9,13 +9,9 @@
 /* Typographical Elements
 --------------------------------------------- */
 body {
-  /* background: #000000; 
-  background: -webkit-linear-gradient(to top, #434343, #000000);
-  background: linear-gradient(to top, #434343, #000000); */
-
-  background: #f7ff00;
-  background: -webkit-linear-gradient(to top, #f7ff00 #db36a4);
-  background: linear-gradient(to top, #f7ff00, #db36a4);
+  background: #67b26f;
+  background: -webkit-linear-gradient(to left, #4ca2cd, #67b26f);
+  background: linear-gradient(to left, #4ca2cd, #67b26f);
 
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 400;
