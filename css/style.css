@@ -1,0 +1,296 @@
+/* ## Box Sizing
+--------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typographical Elements
+--------------------------------------------- */
+body {
+  /* background: #000000; 
+  background: -webkit-linear-gradient(to top, #434343, #000000);
+  background: linear-gradient(to top, #434343, #000000); */
+
+  background: #f7ff00;
+  background: -webkit-linear-gradient(to top, #f7ff00 #db36a4);
+  background: linear-gradient(to top, #f7ff00, #db36a4);
+
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.625;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+a {
+  color: #434343;
+}
+
+a:hover {
+  color: #666;
+}
+
+p {
+  margin: 0 0 1.5em;
+}
+
+#app {
+  color: #434343;
+  position: relative;
+  padding: 20px;
+  width: 300px;
+  min-height: 300px;
+  background-color: #fbf8f6;
+  border-radius: 20px;
+  box-shadow: 0 10px 34px 0 rgba(210, 210, 210, 0.5);
+}
+
+#top_bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#top_bar h1 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#score_board {
+  display: flex;
+  justify-content: flex-start;
+}
+#score_board #timer {
+  margin-right: 15px;
+}
+
+#puzzle {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  background: url(../images/small-pink.jpg);
+}
+
+.tile {
+  width: 65px;
+  height: 65px;
+  border: 1px solid #000;
+}
+.tile span {
+  background: #fbf8f6;
+  line-height: 1;
+  font-size: 9px;
+  margin: 5px;
+  padding: 3px;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-over .tile {
+  visibility: hidden;
+}
+
+.tile-1 {
+  background-image: url(../images/small-pink.jpg);
+  background-position: 0px 0px;
+}
+.tile-2 {
+  background-image: url(../images/small-pink.jpg);
+  background-position: -65px 0px;
+}
+.tile-3 {
+  background-image: url(../images/small-pink.jpg);
+  background-position: -130px 0px;
+}
+.tile-4 {
+  background-image: url(../images/small-pink.jpg);
+  background-position: -195px 0px;
+}
+.tile-5 {
+  background-image: url(../images/small-pink.jpg);
+  background-position: 0px -65px;
+}
+.tile-6 {
+  background-image: url(../images/small-pink.jpg);
+  background-position: -65px -65px;
+}
+.tile-7 {
+  background-image: url(../images/small-pink.jpg);
+  background-position: -130px -65px;
+}
+.tile-8 {
+  background-image: url(../images/small-pink.jpg);
+  background-position: -195px -65px;
+}
+.tile-9 {
+  background-image: url(../images/small-pink.jpg);
+  background-position: 0px -130px;
+}
+.tile-10 {
+  background-image: url(../images/small-pink.jpg);
+  background-position: -65px -130px;
+}
+.tile-11 {
+  background-image: url(../images/small-pink.jpg);
+  background-position: -130px -130px;
+}
+.tile-12 {
+  background-image: url(../images/small-pink.jpg);
+  background-position: -195px -130px;
+}
+.tile-13 {
+  background-image: url(../images/small-pink.jpg);
+  background-position: 0px -195px;
+}
+.tile-14 {
+  background-image: url(../images/small-pink.jpg);
+  background-position: -65px -195px;
+}
+.tile-15 {
+  background-image: url(../images/small-pink.jpg);
+  background-position: -130px -195px;
+}
+.tile-16 {
+  background-image: url(../images/small-pink.jpg);
+  background-position: -195px -195px;
+}
+
+.tile-empty {
+  background: #000000;
+  opacity: 0.75;
+}
+
+.btn {
+  border: none;
+  border-radius: 32px;
+  background-color: #000000;
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  margin-top: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 99;
+}
+
+#game_over {
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#game_over h2 {
+  text-transform: uppercase;
+  font-size: 36px;
+  color: #cc0000;
+}
+
+@media only screen and (min-width: 600px) {
+  #app {
+    width: 540px;
+    min-height: 540px;
+  }
+
+  #puzzle {
+    background: url(../images/pink.jpg);
+  }
+
+  .tile {
+    width: 125px;
+    height: 125px;
+    border: 1px solid #000;
+  }
+
+  .tile-1 {
+    background-image: url(../images/pink.jpg);
+    background-position: 0px 0px;
+  }
+  .tile-2 {
+    background-image: url(../images/pink.jpg);
+    background-position: -125px 0px;
+  }
+  .tile-3 {
+    background-image: url(../images/pink.jpg);
+    background-position: -250px 0px;
+  }
+  .tile-4 {
+    background-image: url(../images/pink.jpg);
+    background-position: -375px 0px;
+  }
+  .tile-5 {
+    background-image: url(../images/pink.jpg);
+    background-position: 0px -125px;
+  }
+  .tile-6 {
+    background-image: url(../images/pink.jpg);
+    background-position: -125px -125px;
+  }
+  .tile-7 {
+    background-image: url(../images/pink.jpg);
+    background-position: -250px -125px;
+  }
+  .tile-8 {
+    background-image: url(../images/pink.jpg);
+    background-position: -375px -125px;
+  }
+  .tile-9 {
+    background-image: url(../images/pink.jpg);
+    background-position: 0px -250px;
+  }
+  .tile-10 {
+    background-image: url(../images/pink.jpg);
+    background-position: -125px -250px;
+  }
+  .tile-11 {
+    background-image: url(../images/pink.jpg);
+    background-position: -250px -250px;
+  }
+  .tile-12 {
+    background-image: url(../images/pink.jpg);
+    background-position: -375px -250px;
+  }
+  .tile-13 {
+    background-image: url(../images/pink.jpg);
+    background-position: 0px -375px;
+  }
+  .tile-14 {
+    background-image: url(../images/pink.jpg);
+    background-position: -125px -375px;
+  }
+  .tile-15 {
+    background-image: url(../images/pink.jpg);
+    background-position: -250px -375px;
+  }
+  .tile-16 {
+    background-image: url(../images/pink.jpg);
+    background-position: -375px -375px;
+  }
+}
